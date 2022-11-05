@@ -1,0 +1,744 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  background: #ECEFF0;
+}
+body .header {
+  display: flex;
+  background-color: #808080;
+  justify-content: space-between;
+  padding: 5px;
+}
+body .header .name {
+  margin-left: 3em;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 25px;
+  gap: 0.4em;
+  font-weight: bolder;
+}
+body .header .name .surname {
+  color: #fff;
+}
+body .header .name .first-name {
+  color: #FF0100;
+}
+body .header ul {
+  margin-right: 7em;
+  display: flex;
+  font-weight: bolder;
+  gap: 6em;
+  padding-bottom: 0.3em;
+}
+body .header ul li {
+  list-style-type: none;
+  color: #fff;
+  font-size: 17px;
+}
+body .header ul li:hover {
+  text-decoration: underline;
+}
+@media screen and (min-width: 1024px) {
+  body .header ul {
+    display: flex;
+  }
+}
+@media screen and (max-width: 485px) {
+  body .header ul {
+    display: none;
+  }
+}
+body .bg-pix img {
+  width: 100%;
+  height: 90vh;
+  filter: blur(8px);
+}
+body .bg-pix img .pix {
+  width: 100%;
+  position: absolute;
+}
+body .slide {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: 3px solid;
+  border-color: #808080;
+  position: absolute;
+  top: 40%;
+  left: 23%;
+}
+body .slide .show {
+  color: blue;
+  -webkit-animation: mymy 3s ease-in 0s 1 normal forwards;
+          animation: mymy 3s ease-in 0s 1 normal forwards;
+}
+@-webkit-keyframes mymy {
+  0% {
+    opacity: 0;
+    transform: rotate(-540deg) scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+@keyframes mymy {
+  0% {
+    opacity: 0;
+    transform: rotate(-540deg) scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+body .slide .show {
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  color: #3D4855;
+}
+@media screen and (min-width: 1024px) {
+  body .slide .show {
+    display: flex;
+  }
+}
+@media screen and (max-width: 485px) {
+  body .slide .show {
+    text-align: center;
+  }
+}
+body .slide .icon {
+  height: 5px;
+}
+body .slide .icon .fa-circle-chevron-down {
+  margin-top: -1em;
+  display: flex;
+  justify-content: center;
+  color: red;
+  -webkit-animation: mymyy 2s ease-in 0s infinite normal forwards;
+          animation: mymyy 2s ease-in 0s infinite normal forwards;
+}
+@-webkit-keyframes mymyy {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+@keyframes mymyy {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+body .slide .slider {
+  font-size: 30px;
+  text-align: center;
+  padding: 5px;
+  color: #fff;
+}
+@-webkit-keyframes slide {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slide {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+body main {
+  overflow-x: hidden;
+}
+body main .about-me {
+  margin-top: 5em;
+  display: flex;
+  margin-left: 10%;
+  gap: 4em;
+}
+@media screen and (min-width: 1024px) {
+  body main .about-me {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .about-me {
+    display: flex;
+    flex-direction: column;
+  }
+}
+body main .about-me .my-pix {
+  margin-top: 4em;
+  width: 300px;
+  height: 300px;
+  border-radius: 3em;
+}
+body main .about-me .details {
+  margin-top: -4em;
+  width: 60%;
+  padding: 10px;
+  line-height: 30px;
+}
+body main .about-me .details .head {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  color: #FF0100;
+}
+body main .about-me .details .abt-me {
+  margin-bottom: 2em;
+  font-size: 20px;
+}
+body main .skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 15em;
+  background: #ECEFF0;
+  gap: 2em;
+  text-align: center;
+  border-radius: 2em;
+}
+@media screen and (min-width: 1024px) {
+  body main .skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5em;
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .skills {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+body main .skills .section-1 {
+  height: 500px;
+  background-color: white;
+  border-radius: 1em;
+}
+body main .skills .section-1 .skills-1 {
+  margin-top: -1.6em;
+  height: 100px;
+  background: linear-gradient(to right, #302C95, #C32D95);
+  border-radius: 1em 1em 0 0;
+}
+body main .skills .section-1 .skills-1 .skill-text {
+  font-size: 25px;
+  padding-top: 0.6em;
+}
+body main .skills .section-1 .middle-skills {
+  display: flex;
+}
+body main .skills .section-1 .middle-skills .empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  margin-left: 35%;
+  margin-top: -3em;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #302C95;
+}
+body main .skills .section-1 .middle-skills .empty #icon-2 {
+  font-size: 30px;
+}
+body main .skills .section-1 .web-img {
+  width: 100%;
+}
+body main .skills .section-1 .web-img:hover {
+  -webkit-animation: myy 5s ease-in 0s 1 normal forwards;
+          animation: myy 5s ease-in 0s 1 normal forwards;
+}
+@-webkit-keyframes myy {
+  0% {
+    transform: scaleX(0.4);
+    transform-origin: 100% 100%;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: 100% 100%;
+  }
+}
+@keyframes myy {
+  0% {
+    transform: scaleX(0.4);
+    transform-origin: 100% 100%;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: 100% 100%;
+  }
+}
+body main .container {
+  background-color: #fff;
+  padding-bottom: 2em;
+}
+body main .container .brand-text {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  color: #FF0100;
+  font-weight: bolder;
+}
+body main .container .what-i-know {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5em;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+@media screen and (min-width: 1024px) {
+  body main .container .what-i-know {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5em;
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .container .what-i-know {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+body main .container .what-i-know .brands {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .container .what-i-know .brands .fa-html5 {
+  color: yellowgreen;
+  font-size: 35px;
+}
+body main .container .what-i-know .brands #icon-3 {
+  font-size: 35px;
+  color: green;
+}
+body main .container .what-i-know .brands .fa-css3-alt {
+  color: blue;
+  font-size: 35px;
+}
+body main .container .what-i-know .brands .fa-bootstrap {
+  color: blue;
+  font-size: 35px;
+}
+body main .container .what-i-know .brands .fa-sass {
+  color: green;
+  font-size: 35px;
+}
+body main .container .what-i-know .brands .fa-github {
+  color: green;
+  font-size: 35px;
+}
+body main .container .what-i-know .brands .fa-desktop {
+  color: yellowgreen;
+  font-size: 35px;
+}
+body main .cards-body {
+  margin-top: -2.5em;
+  background: #808080;
+  padding-bottom: 7em;
+}
+@media screen and (max-width: 485px) {
+  body main .cards-body {
+    padding-bottom: 50em;
+  }
+}
+body main .cards-body .proj {
+  font-size: 40px;
+  color: #FF0100;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+}
+body main .cards-body .card-grid {
+  margin-top: 4em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  height: 350px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+@media screen and (min-width: 1024px) {
+  body main .cards-body .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .cards-body .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+body main .cards-body .card-grid .card-container {
+  position: relative;
+  height: 350px;
+}
+body main .cards-body .card-grid .card-container .cards {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+body main .cards-body .card-grid .card-container .cards .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background: #3D4855;
+  color: #333;
+}
+body main .cards-body .card-grid .card-container .cards .front .my-pix {
+  width: 100%;
+  height: 350px;
+}
+body main .cards-body .card-grid .card-container .cards .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background: #fff;
+  transform: rotateY(180deg);
+}
+body main .cards-body .card-grid .card-container .cards .back .back-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20%;
+  gap: 2em;
+}
+body main .cards-body .card-grid .card-container .cards .back .back-card .click {
+  font-size: 30px;
+  color: #2F2C95;
+}
+body main .cards-body .card-grid .card-container .cards .back .back-card a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #FF0100;
+  -webkit-animation: myAnim 1s ease-in 0s infinite normal forwards;
+          animation: myAnim 1s ease-in 0s infinite normal forwards;
+}
+@-webkit-keyframes myAnim {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+@keyframes myAnim {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+body main .cards-body .card-grid .card-container .cards:hover {
+  transform: rotateY(180deg);
+}
+body main .last-box {
+  background-color: #3D4855;
+  margin-top: 0em;
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+body main .last-box .education-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4em;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: #3D4855;
+}
+@media screen and (min-width: 1024px) {
+  body main .last-box .education-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .last-box .education-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 5em;
+  }
+}
+body main .last-box .education-box .box {
+  background-color: #fff;
+  border-radius: 2em;
+  box-shadow: 0 4px 14px white;
+}
+@media screen and (max-width: 485px) {
+  body main .last-box .education-box .box {
+    margin-top: 3em;
+  }
+}
+body main .last-box .education-box .box .qualifications {
+  margin-bottom: 3.75em;
+  line-height: 5px;
+}
+body main .last-box .education-box .box .education {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+  color: #3350A2;
+}
+body main .last-box .education-box .box .status {
+  margin-bottom: 1em;
+}
+body main .last-box .education-box .box .status .sex-box {
+  margin: 0.5em;
+  margin-left: 2em;
+}
+body main .last-box .education-box .box .status .sex-box .sex {
+  font-size: 18px;
+  font-weight: bolder;
+}
+body main .last-box .education-box .box .skilltext {
+  margin-bottom: 0.5em;
+}
+body main .last-box .education-box .box .education-text {
+  margin-left: 1em;
+}
+body main .last-box .education-box .box .info {
+  display: block;
+}
+body main .last-box .education-box .box .footer-box {
+  background: linear-gradient(to right, #32419B, #3698C9, #2EC7E1);
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  margin-top: 3em;
+  border-radius: 0 0 2em 2em;
+}
+body main .last-box .education-box .box .footer-box .footer-pix {
+  margin-top: -3em;
+  width: 30%;
+  height: 100px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #fff;
+  border-radius: 50%;
+}
+body main .contact-box {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  background: #F1F1F2;
+  margin-top: 9em;
+  width: 130%;
+}
+@media screen and (min-width: 1024px) {
+  body main .contact-box {
+    display: flex;
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .contact-box {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+}
+body main .contact-box .mini-contact {
+  display: flex;
+  flex-direction: column;
+  background: #D7D3E7;
+  margin-top: 30em;
+  margin-left: 10%;
+  padding: 3em;
+}
+@media screen and (min-width: 1024px) {
+  body main .contact-box .mini-contact {
+    margin-top: 30em;
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .contact-box .mini-contact {
+    margin-top: -10em;
+    width: 100%;
+  }
+}
+body main .contact-box .mini-contact #msg {
+  height: 90px;
+  margin-bottom: 2em;
+}
+body main .contact-box .mini-contact input {
+  width: 25em;
+  height: 30px;
+}
+body main .contact-box .mini-contact button {
+  height: 40px;
+  background: blue;
+}
+body main .contact-box .box-contact {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  margin-top: 20em;
+  background: linear-gradient(to right, #BFD7F2, #DFEAFA);
+  width: 40%;
+}
+@media screen and (min-width: 1024px) {
+  body main .contact-box .box-contact {
+    padding-top: 1.5em;
+    margin-top: 20em;
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .contact-box .box-contact {
+    padding-top: 0em;
+    margin-top: 40em;
+  }
+}
+body main .contact-box .box-contact .box-text {
+  font-size: 20px;
+}
+@media screen and (min-width: 1024px) {
+  body main .contact-box .box-contact .box-text {
+    display: block;
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .contact-box .box-contact .box-text {
+    display: none;
+    width: 100%;
+  }
+}
+body main .contact-box .box-contact .socials {
+  display: flex;
+  flex-direction: column;
+  margin-left: -20em;
+  padding-bottom: 1.5em;
+}
+@media screen and (min-width: 1024px) {
+  body main .contact-box .box-contact .socials {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .contact-box .box-contact .socials {
+    margin-top: -49em;
+    display: flex;
+    flex-direction: row;
+    margin-left: 2em;
+  }
+}
+body main .contact-box .box-contact .socials .pointed-hand {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+  margin-bottom: 2em;
+}
+body main .contact-box .box-contact .socials .pointed-hand .fa-hand-point-down {
+  font-size: 35px;
+  color: #302C95;
+  -webkit-animation: hand 1s ease-in 0s infinite normal forwards;
+          animation: hand 1s ease-in 0s infinite normal forwards;
+}
+@media screen and (min-width: 1024px) {
+  body main .contact-box .box-contact .socials .pointed-hand .fa-hand-point-down {
+    display: block;
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .contact-box .box-contact .socials .pointed-hand .fa-hand-point-down {
+    display: none;
+  }
+}
+body main .contact-box .box-contact .socials .brandss {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-left: 45%;
+}
+@media screen and (min-width: 1024px) {
+  body main .contact-box .box-contact .socials .brandss {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 485px) {
+  body main .contact-box .box-contact .socials .brandss {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+body main .contact-box .box-contact .socials .brandss .socials-icon {
+  font-size: 30px;
+}
+@-webkit-keyframes hand {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+@keyframes hand {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+body .triangle {
+  -webkit-clip-path: polygon(0 0, 0 12%, 26% 12%);
+          clip-path: polygon(0 0, 0 12%, 26% 12%);
+  margin-top: 18.4em;
+  margin-left: -48.5em;
+}
+@media screen and (max-width: 485px) {
+  body .triangle {
+    display: none;
+  }
+}
+body .triangle .barbz {
+  width: 200px;
+  height: 34em;
+}
+body .triangle-2 {
+  -webkit-clip-path: polygon(28% 0, 0 0, 0 14%);
+          clip-path: polygon(28% 0, 0 0, 0 14%);
+  height: 30em;
+  width: 15%;
+  margin-left: -8em;
+  margin-top: 77.5em;
+}
+@media screen and (min-width: 1024px) {
+  body .triangle-2 {
+    display: block;
+  }
+}
+@media screen and (max-width: 485px) {
+  body .triangle-2 {
+    display: none;
+  }
+}/*# sourceMappingURL=main.css.map */

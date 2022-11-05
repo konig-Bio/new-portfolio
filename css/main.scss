@@ -1,0 +1,855 @@
+$colors: (
+    primary: linear-gradient(to right, #2F2C95, #B42E96),
+    secondary: #3D4855,
+    nav-color: #808080,
+    textColor: #fff,
+    nextcolor: #ECEFF0,
+    textColor-2: #FF0100
+);
+$margin: 30px;
+$padding: 5px;
+
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+$mobile: 485px;
+
+@mixin mobile {
+    @media screen and (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+$desktop: 1024px;
+
+@mixin desktop {
+    @media screen and (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+
+
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    background: color(nextcolor);
+
+
+    .header {
+        // width: 100%;
+        display: flex;
+        background-color: color(nav-color);
+        justify-content: space-between;
+        padding: $padding;
+
+        .name {
+            margin-left: 3em;
+            display: flex;
+            align-items: center;
+            color: color(textColor);
+            font-size: 25px;
+            gap: .4em;
+            font-weight: bolder;
+
+
+            .surname {
+                color: color(textColor);
+            }
+
+            .first-name {
+                color: color(textColor-2);
+            }
+        }
+
+        ul{
+            margin-right: 7em;
+            display: flex;
+            font-weight: bolder;
+            gap: 6em;
+            padding-bottom: .3em;
+
+            li {
+                list-style-type: none;
+                color: color(textColor);
+                font-size: 17px;
+            }
+
+            li:hover {
+                text-decoration: underline;
+                
+            }
+            @include desktop() {
+                display: flex;
+            }
+
+            @include mobile() {
+                display: none;
+            }
+        }
+    }
+    .bg-pix img {
+        width: 100%;
+        height: 90vh;
+        filter: blur(8px);
+        
+
+        .pix {
+            width: 100%;
+            position: absolute;
+        }
+    }
+
+
+    .slide {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        border: 3px solid;
+        border-color: color(nav-color);
+        position: absolute;
+        top: 40%;
+        left: 23%;
+        // animation: slide 5s ease 0s 1 normal forwards;
+
+        .show {
+            color: blue;
+            animation: mymy 3s ease-in 0s 1 normal forwards;
+        }
+        @keyframes mymy {
+            0% {
+                opacity: 0;
+                transform: rotate(-540deg) scale(2);
+            }
+        
+            100% {
+                opacity: 1;
+                transform: rotate(0) scale(1);
+            }
+        }
+
+
+        .show {
+            display: flex;
+            justify-content: center;
+            font-weight: bolder;
+            color: color(secondary);
+
+
+            @include desktop() {
+                display: flex;
+            }
+
+            @include mobile() {
+                text-align: center;
+            }
+        }
+        .icon {
+
+            height: 5px;
+
+            .fa-circle-chevron-down {
+                margin-top: -1em;
+                display: flex;
+                justify-content: center;
+                color: red;
+                animation: mymyy 2s ease-in 0s infinite normal forwards;
+            }
+            @keyframes mymyy {
+                0%,
+                50%,
+                100% {
+                    opacity: 1;
+                }
+            
+                25%,
+                75% {
+                    opacity: 0;
+                }
+            }
+        }
+        
+        
+
+
+        .slider {
+            font-size: 30px;
+            text-align: center;
+            padding: $padding;
+            color: color(textColor);
+            @keyframes slide {
+                0% {
+                    transform: scale(0);
+                }
+            
+                100% {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+
+    main {
+
+        overflow-x: hidden;
+        .about-me {
+            margin-top: 5em;
+            display: flex;
+            margin-left: 10%;
+            gap: 4em;
+    
+
+            @include desktop() {
+                display: flex;
+                flex-direction: row;
+            }
+
+            @include mobile() {
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .my-pix {
+                margin-top: 4em;
+                width: 300px;
+                height: 300px;
+                border-radius: 3em;
+            }
+    
+            .details {
+                margin-top: -4em;
+                width: 60%;
+                padding: 10px;
+                line-height: 30px;
+    
+                .head {
+                    display: flex;
+                    justify-content: center;
+                    font-size: 40px;
+                    color: color(textColor-2);
+                }
+    
+                .abt-me {
+                    margin-bottom: 2em;
+                    font-size: 20px;
+                }
+            }
+        }
+    
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-left: 8%;
+            margin-right: 8%;
+            margin-top: 15em;
+            background: color(nextcolor);
+            gap: 2em;
+            text-align: center;
+            border-radius: 2em;
+
+
+            @include desktop() {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 5em;
+            }
+
+
+            @include mobile() {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            
+
+
+            .section-1 {
+                height: 500px;
+                background-color: white;
+                border-radius: 1em;
+
+
+                .skills-1 {
+                    margin-top: -1.6em;
+                    height: 100px;
+                    background: linear-gradient(to right, #302C95, #C32D95);
+                    border-radius: 1em 1em 0 0;
+    
+                    .skill-text {
+                        font-size: 25px;
+                        padding-top: .6em;
+                    }
+                }
+
+
+                .middle-skills {
+                    display: flex;
+    
+                    .empty {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // position: absolute;
+                        width: 100px;
+                        height: 100px;
+                        background: white;
+                        border-radius: 50%;
+                        margin-left: 35%;
+                        margin-top: -3em;
+                        border-width: 3px;
+                        border-style: solid;
+                        border-color: #302C95;
+    
+                        #icon-2 {
+                            font-size: 30px;
+                        }
+                    }
+                }
+
+               
+
+                .web-img {
+                    width: 100%;
+                }
+                .web-img:hover {
+                    animation: myy 5s ease-in 0s 1 normal forwards;
+                }
+                @keyframes myy {
+                    0% {
+                        transform: scaleX(0.4);
+                        transform-origin: 100% 100%;
+                    }
+                
+                    100% {
+                        transform: scaleX(1);
+                        transform-origin: 100% 100%;
+                    }
+                }
+                
+            }
+            
+
+            
+    
+            
+        }
+
+        .container {
+            background-color: color(textColor);
+            padding-bottom: 2em;
+
+            .brand-text {
+                padding-top: 1em;
+                padding-bottom: 1em;
+                font-size: 40px;
+                display: flex;
+                justify-content: center;
+                color: color(textColor-2);
+                font-weight: bolder;
+            }
+
+            .what-i-know {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 5em;
+                margin-left: 5%;
+                margin-right: 5%;
+
+                @include desktop() {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    gap: 5em;
+                }
+
+
+                @include mobile() {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+
+                .brands {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .fa-html5 {
+                        color: yellowgreen;
+                        font-size: 35px;
+                    }
+                    #icon-3 {
+                        font-size: 35px;
+                        color: green;
+                    }
+                    .fa-css3-alt {
+                        color: blue;
+                        font-size: 35px;
+                    }
+
+                    .fa-bootstrap {
+                        color: blue;
+                        font-size: 35px;
+                    }
+                    .fa-sass {
+                        color: green;
+                        font-size: 35px;
+                    }
+                    .fa-github {
+                        color: green;
+                        font-size: 35px;
+                    }
+                    .fa-desktop {
+                        color: yellowgreen;
+                        font-size: 35px;
+                    }
+                }
+            }
+        }
+
+        .cards-body {
+            margin-top: -2.5em;
+            background: color(nav-color);
+            padding-bottom: 7em;
+
+            @include mobile() {
+                padding-bottom: 50em;
+            }
+
+            .proj {
+                font-size: 40px;
+                color: color(textColor-2);
+                font-weight: bolder;
+                display: flex;
+                justify-content: center;
+            }
+
+            .card-grid {
+                margin-top: 4em;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2em;
+                height: 350px;
+                margin-left: 10%;
+                margin-right: 10%;
+
+
+                @include desktop() {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                
+                }
+
+                @include mobile() {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                }
+    
+    
+                .card-container {
+                    position: relative;
+                    height: 350px;
+    
+    
+                    .cards {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        transform-style: preserve-3d;
+                        transition: all 0.5s ease;
+    
+    
+    
+                        .front {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            backface-visibility: hidden;
+                            background: color(secondary);
+                            color: #333;
+    
+    
+                            .myimg {
+    
+                            }
+                            .my-pix {
+                                width: 100%;
+                                height: 350px;
+                            }
+                            
+                        }
+                        .back {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            backface-visibility: hidden;
+                            background: color(textColor);
+                            transform: rotateY(180deg);
+
+
+                            .back-card {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                margin-top: 20%;
+                                gap: 2em;
+
+
+                                .click {
+                                    font-size: 30px;
+                                    color: #2F2C95;
+                                }
+                                a {
+                                    font-size: 20px;
+                                    text-decoration: none;
+                                    color: color(textColor-2);
+                                    animation: myAnim 1s ease-in 0s infinite normal forwards;
+                                }
+                            }
+
+                            
+                            @keyframes myAnim {
+                                0%,
+                                50%,
+                                100% {
+                                    opacity: 1;
+                                }
+                            
+                                25%,
+                                75% {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                    .cards:hover {
+                        transform: rotateY(180deg);
+                    }
+        
+                }
+            }
+        }
+        
+
+        .last-box {
+            background-color: color(secondary);
+            margin-top: 0em;
+            padding-top: 4em;
+            padding-bottom: 4em;
+
+
+            .education-box {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 4em;
+                margin-left: 10%;
+                margin-right: 10%;
+                background-color: color(secondary);
+
+
+                @include desktop() {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+
+                @include mobile() {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    margin-top: 5em;
+                }
+    
+    
+                .box {
+                    background-color: color(textColor);
+                    border-radius: 2em;
+                    box-shadow: 0 4px 14px white;
+
+                    @include mobile() {
+                        margin-top: 3em;
+                    }
+    
+
+                    .qualifications {
+                        margin-bottom: 3.75em;
+                        line-height: 5px;
+                    }
+    
+    
+                    .education {
+                        font-size: 20px;
+                        text-align: center;
+                        font-weight: bolder;
+                        color: #3350A2;
+                    }
+                    .status {
+                        margin-bottom: 1em;
+
+                        .sex-box {
+                            margin: .5em;
+                            margin-left: 2em;
+
+                            .sex {
+                                font-size: 18px;
+                                font-weight: bolder;
+                            }
+                        }
+                    
+                    }
+                    .skilltext {
+                        margin-bottom: .5em;
+                    }
+                    .education-text {
+                        margin-left: 1em;
+                    }
+                    .info {
+                        display: block;
+                    }
+        
+                    .footer-box {
+                        background: linear-gradient(to right, #32419B, #3698C9, #2EC7E1);
+                        display: flex;
+                        justify-content: center;
+                        height: 100px;
+                        margin-top: 3em;
+                        border-radius: 0 0 2em 2em;   
+        
+        
+        
+                        .footer-pix {
+                            margin-top: -3em;
+                            width: 30%;
+                            height: 100px;
+                            border-width: 3px;
+                            border-style: solid;
+                            border-color: color(textColor);
+                            border-radius: 50%;
+                        }
+                    }
+                }
+                
+            }
+        }
+        
+    
+        .contact-box {
+            display: flex;
+            height: 100px;
+            align-items: center;
+            background: #F1F1F2;
+            margin-top: 9em;
+            width: 130%;
+
+            @include desktop() {
+                display: flex;
+
+            }
+
+
+            @include mobile() {
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+                // margin-top: -30em;
+            }
+
+
+            
+
+            .mini-contact {
+                display: flex;
+                flex-direction: column;
+                background: #D7D3E7;
+
+                margin-top: 30em;
+                margin-left: 10%;
+                padding: 3em;
+
+                @include desktop() {
+                    margin-top: 30em;
+                }
+
+                @include mobile() {
+                    
+                    margin-top: -10em;
+                    width: 100%;
+                }
+
+
+                #msg {
+                    height: 90px;
+                    margin-bottom: 2em;
+                }
+                input {
+                    width: 25em;
+                    height: 30px;
+                }
+
+                button {
+                    height: 40px;
+                    background: blue;
+                }
+            }
+
+
+            .box-contact {
+                padding-top: 1.5em;
+                padding-bottom: 1.5em;
+                margin-top: 20em;
+                background: linear-gradient(to right,#BFD7F2, #DFEAFA);
+                width: 40%;
+
+
+                @include desktop() {
+                    padding-top: 1.5em;
+                    margin-top: 20em;
+                }
+
+
+                @include mobile() {
+                    padding-top: 0em;
+                    margin-top: 40em;
+                }
+
+                
+
+
+                .box-text {
+                    font-size: 20px;
+                    @include desktop() {
+                        display: block;
+                    }
+
+                    @include mobile() {
+                        display: none;
+                        width: 100%;
+                        // margin-top: 30em;
+                    }
+                }
+
+
+                .socials {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: -20em;
+                    padding-bottom: 1.5em;
+
+
+                    @include desktop() {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+
+                    @include mobile() {
+                        margin-top: -49em;
+                        display: flex;
+                        flex-direction: row;
+                        margin-left: 2em;
+                    }
+    
+    
+                    .pointed-hand {
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 3em;
+                        margin-bottom: 2em;
+    
+                        .fa-hand-point-down {
+                            font-size: 35px;
+                            color: #302C95;
+                            animation: hand 1s ease-in 0s infinite normal forwards;
+
+                            @include desktop() {
+                                display: block;
+                            }
+
+                            @include mobile() {
+                                display: none;
+                            }
+                        }
+                    }
+
+
+                    .brandss {
+                        display: flex;
+                        flex-direction: column;
+                        // align-items: center;
+                        gap: 1em;
+                        margin-left: 45%;
+
+                        @include desktop() {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        @include mobile() {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+        
+        
+                        .socials-icon {
+                            font-size: 30px;
+                        }
+                    }
+
+                }
+            }
+
+
+
+                @keyframes hand {
+                    0%,
+                    50%,
+                    100% {
+                        opacity: 1;
+                    }
+                
+                    25%,
+                    75% {
+                        opacity: 0;
+                    }
+                }
+            }
+
+        }
+
+
+        .triangle {
+            clip-path: polygon(0 0, 0 12%, 26% 12%);
+            margin-top: 18.4em;
+            margin-left: -48.5em;
+            @include mobile() {
+                display: none;
+            }
+
+
+            .barbz {
+                width: 200px;
+                height: 34em;
+            }
+        }
+    
+
+        .triangle-2 {
+            clip-path: polygon(28% 0, 0 0, 0 14%);
+            height: 30em;
+            width: 15%;
+            margin-left: -8em;
+            margin-top: 77.5em;
+
+            @include desktop() {
+                display: block;
+            }
+
+
+            @include mobile() {
+                display: none;
+            }
+        }
+    }
+    
